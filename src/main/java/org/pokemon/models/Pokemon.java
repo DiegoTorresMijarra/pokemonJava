@@ -1,10 +1,13 @@
 package org.pokemon.models;
 
 import java.util.List;
+
+import lombok.Builder;
 import lombok.Data;
 
 @Data
-public class PokemonItem{
+@Builder
+public class Pokemon {
 	private String img;
 	private String egg;
 	private String candy;
