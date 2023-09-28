@@ -4,6 +4,6 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class Response{
-	private List<PokemonItem> pokemon;
+public class Pokedex {
+	private List<Pokemon> pokemon;
 }
