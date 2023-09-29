@@ -2,11 +2,11 @@ package org.pokemon.models;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
 public class Pokemon {
 	private String img;
 	private String egg;
@@ -17,12 +17,40 @@ public class Pokemon {
 	private List<String> weaknesses;
 	private String name;
 	private int avgSpawns;
-	private List<Object> multipliers;
+	private List<String> multipliers;
 	private int id;
 	private String spawnTime;
 	private String height;
-	private Object spawnChance;
+	private String spawnChance;
+	@Builder.ObtainVia(method = "")
 	private List<PrevEvolutionItem> prevEvolution;
 	private int candyCount;
 	private List<NextEvolutionItem> nextEvolution;
+
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public String toString() {
+		return "Pokemon{" +
+				"img='" + img + '\'' +
+				", egg='" + egg + '\'' +
+				", candy='" + candy + '\'' +
+				", num='" + num + '\'' +
+				", weight='" + weight + '\'' +
+				", type=" + type +
+				", weaknesses=" + weaknesses +
+				", name='" + name + '\'' +
+				", avgSpawns=" + avgSpawns +
+				", multipliers=" + multipliers +
+				", id=" + id +
+				", spawnTime='" + spawnTime + '\'' +
+				", height='" + height + '\'' +
+				", spawnChance=" + spawnChance +
+				", prevEvolution=" + prevEvolution +
+				", candyCount=" + candyCount +
+				", nextEvolution=" + nextEvolution +
+				'}';
+	}
 }
