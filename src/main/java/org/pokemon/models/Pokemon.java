@@ -99,7 +99,23 @@ public class Pokemon {
 				.replace((char)91,(char)32).replace((char)93,(char)32).replace((char)34,(char)32)
 				.strip().split(" , ")).toList();
 	}
-
+	public int sumatorioDebilidades(){
+		int sum=0;
+		try {
+			sum+=this.getWeaknesses().size();
+		}catch (NullPointerException ignored){}
+		return sum;
+	}
+	public int sumatorioEvoluciones(){
+		int sum=0;
+		try {
+			sum+=this.getPrevEvolution().size();
+		}catch (NullPointerException ignored){}
+		try{
+			sum+=this.getNextEvolution().size();
+		}catch (NullPointerException ignored){}
+		return sum;
+	}
 	@Override
 	public String toString() {
 		String nxEvol="";
@@ -118,14 +134,14 @@ public class Pokemon {
 		}
 
 		return "Pokemon{" +
-				"img='" + img + '\'' +
+				"name='" + name + '\'' +
 				", egg=" + egg +
 				", candy='" + candy + '\'' +
 				", num='" + num + '\'' +
 				", weight=" + weight +
 				", type=" + type +
 				", weaknesses=" + weaknesses +
-				", name='" + name + '\'' +
+				", img=" + img +  '\'' +
 				", avgSpawns=" + avgSpawns +
 				", multipliers=" + multipliers +
 				", id=" + id +
