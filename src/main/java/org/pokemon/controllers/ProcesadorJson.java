@@ -33,7 +33,7 @@ public class ProcesadorJson {
         return pokedex;
     }
 
-    ProcesadorJson(){
+    public ProcesadorJson(){
         pokedex=new Pokedex();
         cargarPokedex();
     }
@@ -47,18 +47,11 @@ public class ProcesadorJson {
             List<JsonObject> e=gson.fromJson(reader,streamPoke);
             e.forEach(item->pokedex.getPokemon().add(new Pokemon(item)));
         } catch (IOException e) {
-            System.out.println("aa");
             e.printStackTrace();
         }
     }
 
-    List <Pokemon> forEach(Function<Pokemon,Boolean> fun){
+    public List <Pokemon> forEach(Function<Pokemon, Boolean> fun){
         return new ArrayList<>(getPokedex().getPokemon().stream().filter(fun::apply).toList());
-    }
-
-    public static void main(String[] args) {
-        ProcesadorJson pj=new ProcesadorJson();
-        List<Pokemon> res=pj.forEach(e->e.getName().equals("Pikachu"));
-        System.out.println(res.get(0).toString());
     }
 }

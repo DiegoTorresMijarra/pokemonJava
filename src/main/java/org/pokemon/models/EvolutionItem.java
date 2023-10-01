@@ -14,6 +14,15 @@ public class EvolutionItem {
         this.num = obj.get("num").toString().replace((char)34,(char)32).trim();
         this.name =obj.get("name").toString().replace((char)34,(char)32).trim();
     }
+//me obliga a crearlos, por el lombock
+    public String getNum() {
+        return num;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "{name='" + name + '\'' +

@@ -29,12 +29,15 @@ public class Pokemon {
 	private List<EvolutionItem> nextEvolution;
 
 	public Pokemon(JsonObject jo) {
+		id=jo.get("id").getAsInt();
 		img=jo.get("img").toString();
 		egg=procesarEgg(jo.get("egg").toString());
 		candy=jo.get("candy").toString();
 		num=jo.get("num").toString().replace((char)34,(char)32).trim();
-		weight=Double.parseDouble(jo.get("weight").toString().replaceAll("kg","").replace((char)34,(char)32));
-		height=Double.parseDouble(jo.get("height").toString().replaceAll("m","").replace((char)34,(char)32));
+		weight=Double.parseDouble(jo.get("weight").toString()
+				.replaceAll("kg","").replace((char)34,(char)32));
+		height=Double.parseDouble(jo.get("height").toString()
+				.replaceAll("m","").replace((char)34,(char)32));
 		type= procesarTypeWeak(jo.get("type"));
 		weaknesses=procesarTypeWeak(jo.get("weaknesses"));
 		name=jo.get("name").toString().replace((char)34,(char)32).strip();
@@ -96,9 +99,6 @@ public class Pokemon {
 				.replace((char)91,(char)32).replace((char)93,(char)32).replace((char)34,(char)32)
 				.strip().split(" , ")).toList();
 	}
-	public String getName() {
-		return name;
-	}
 
 	@Override
 	public String toString() {
@@ -136,5 +136,73 @@ public class Pokemon {
 				", candyCount=" + candyCount +
 				", nextEvolution=" + nxEvol +
 				'}';
+	}
+//me obliga a crearlos, no me funciona bien el lombock
+	public String getImg() {
+		return img;
+	}
+
+	public double getEgg() {
+		return egg;
+	}
+
+	public String getCandy() {
+		return candy;
+	}
+
+	public String getNum() {
+		return num;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public List<String> getType() {
+		return type;
+	}
+
+	public List<String> getWeaknesses() {
+		return weaknesses;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public double getAvgSpawns() {
+		return avgSpawns;
+	}
+
+	public List<Double> getMultipliers() {
+		return multipliers;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getSpawnTime() {
+		return spawnTime;
+	}
+
+	public double getHeight() {
+		return height;
+	}
+
+	public double getSpawnChance() {
+		return spawnChance;
+	}
+
+	public List<EvolutionItem> getPrevEvolution() {
+		return prevEvolution;
+	}
+
+	public int getCandyCount() {
+		return candyCount;
+	}
+
+	public List<EvolutionItem> getNextEvolution() {
+		return nextEvolution;
 	}
 }
