@@ -1,3 +1,4 @@
+
 plugins {
     id("java")
 }
@@ -21,7 +22,6 @@ dependencies {
     implementation("org.mybatis:mybatis:3.5.13")
 
 }
-
 tasks.test {
     useJUnitPlatform()
 }
