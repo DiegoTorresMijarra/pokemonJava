@@ -16,6 +16,9 @@ import java.util.Properties;
  * @version 1.0
  */
 public class DataBaseManager {
+    /**
+     * String del path de la carpeta foco
+     */
     private static final String dataPath= Paths.get("").toAbsolutePath()+ File.separator+"src"+ File.separator+"main"+ File.separator+"resources"+ File.separator;
     /**
      * Instancia de la clase
@@ -203,7 +206,7 @@ public class DataBaseManager {
      * @see SQLException
      * @see FileNotFoundException
      * @param sqlFile path archivo sql
-     * @param logWriter Indica si se escribe el log
+     * @param logWriter Indica si se escribe en consola
      * @throws FileNotFoundException Error al encontrar el archivo sql
      * @throws SQLException Error al ejecutar el archivo sql
      */

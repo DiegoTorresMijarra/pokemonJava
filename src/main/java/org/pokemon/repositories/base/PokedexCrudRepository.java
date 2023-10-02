@@ -28,6 +28,12 @@ public class PokedexCrudRepository implements CrudRepository<Pokemon> {
         dataBaseManager = database;
     }
 
+    /**
+     * Devuelve una  List'\<'Pokemon> con los valores de todos los pokemons de la pokedex
+     * @return  List'\<'Pokemon>
+     * @throws SQLException si no puede ejecutar la sentencia
+     * @see DataBaseManager
+     */
     @Override
     public List<Pokemon> findAll() throws SQLException {
         dataBaseManager.openConnection();
@@ -47,6 +53,12 @@ public class PokedexCrudRepository implements CrudRepository<Pokemon> {
         return pokedex;
     }
 
+    /**
+     * Optional'\<'Pokemon> con el valor del pokemon con el id dado
+     * @param id Id de la entidad
+     * @return Optional'\<'Pokemon>
+     * @throws SQLException si no puede ejecutar la sentencia
+     */
     @Override
     public Optional<Pokemon> findById(Integer id) throws SQLException {
         dataBaseManager.openConnection();
@@ -66,8 +78,8 @@ public class PokedexCrudRepository implements CrudRepository<Pokemon> {
     /**
      * Inserta un Pokemon
      * @param entity Entidad
-     * @return
-     * @throws SQLException
+     * @return true si se ejecuta correctamente, si salta la excepcion, no devuelve nada mas q la excepcion
+     * @throws SQLException si no consigue insertar la entidad
      */
     @Override
     public boolean insert(Pokemon entity) throws SQLException {
@@ -84,11 +96,22 @@ public class PokedexCrudRepository implements CrudRepository<Pokemon> {
         return true;//si llega aqui se ha ejecutado todo el cod
     }
 
+    /**
+     * No implementados
+     * @param entity  Entidad
+     * @return
+     * @throws SQLException
+     */
     @Override
     public Pokemon update(Pokemon entity) throws SQLException {
         return null;
     }
-
+    /**
+     * No implementados
+     * @param entity  Entidad
+     * @return
+     * @throws SQLException
+     */
     @Override
     public Pokemon delete(Pokemon entity) throws SQLException {
         return null;
