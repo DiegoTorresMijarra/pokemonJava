@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"org.pokemon"},{"l":"org.pokemon.controllers"},{"l":"org.pokemon.models"},{"l":"org.pokemon.repositories.base"},{"l":"org.pokemon.services.database"}];updateSearchResults();

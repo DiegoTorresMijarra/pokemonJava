@@ -1,0 +1,5 @@
+org.pokemon
+org.pokemon.controllers
+org.pokemon.models
+org.pokemon.repositories.base
+org.pokemon.services.database
