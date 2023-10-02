@@ -12,7 +12,16 @@ import java.sql.SQLException;
 import java.util.*;
 import java.util.stream.Stream;
 
+/**
+ * Clase main del Proyecto pokemonJava
+ * @author Daniel y Diego
+ * @version 1.0
+ */
 public class Main {
+    /**
+     * void main del proyecto
+     * @param args String[]
+     */
     public static void main(String[] args) {
         System.out.println("-------------------------------------------------------------------------");
         System.out.println("---------------------- Comienzo Ejecucion Main --------------------------");
