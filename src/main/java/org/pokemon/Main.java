@@ -127,6 +127,7 @@ public class Main {
         System.out.println("------------------------------------------------------------------");
         System.out.println("Exportando a un CSV");
         ProcesadorCsv pc=ProcesadorCsv.getInstancia();
+        pc.mostrarCsvPantalla();
     }
 
 }

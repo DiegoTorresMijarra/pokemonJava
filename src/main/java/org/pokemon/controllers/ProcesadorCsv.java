@@ -31,7 +31,7 @@ public class ProcesadorCsv {
         String archivoCsv=dataPath+File.separator+csvFile;
         File f=new File(archivoCsv);
         if (f.exists())
-            System.out.println(f.delete());
+            f.delete();
         try(FileWriter fr=new FileWriter(f))  {
             fr.write("id, num, name, height, width \n");
             for(Pokemon p:pokedex.getPokemon()){
@@ -41,5 +41,23 @@ public class ProcesadorCsv {
             System.err.println(e.getMessage());
             throw new RuntimeException(e);
         }
+        System.out.println("Archivo creado correctamente");
+    }
+    public void mostrarCsvPantalla(){
+        String archivoCsv=dataPath+File.separator+csvFile;
+        File f=new File(archivoCsv);
+        if (f.exists())
+            System.out.println("Leyendo el archivo csv");
+        System.out.println("-----------------------");
+        try(BufferedReader fr= new BufferedReader(new FileReader(f))){
+            while(fr.ready()){
+                System.out.println(fr.readLine());
+            }
+
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+        System.out.println("-----------------------");
     }
 }
