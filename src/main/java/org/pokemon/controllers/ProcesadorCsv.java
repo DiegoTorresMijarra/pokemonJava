@@ -33,14 +33,12 @@ public class ProcesadorCsv {
         if (f.exists())
             System.out.println(f.delete());
         try(FileWriter fr=new FileWriter(f))  {
-            BufferedWriter wr=new BufferedWriter(fr);
-            wr.write("id, num, name, height, width");
-            wr.newLine();
+            fr.write("id, num, name, height, width \n");
             for(Pokemon p:pokedex.getPokemon()){
-                wr.write(p.getId()+","+p.getNum()+","+p.getHeight()+","+p.getWeight());
-                wr.newLine();
+                fr.write(p.getId()+","+p.getNum()+","+p.getName()+","+p.getHeight()+","+p.getWeight()+'\n');
             }
         } catch (IOException e) {
+            System.err.println(e.getMessage());
             throw new RuntimeException(e);
         }
     }
