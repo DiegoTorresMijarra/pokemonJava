@@ -153,4 +153,73 @@ public class Pokemon {
 				", nextEvolution=" + nxEvol +
 				'}';
 	}
+	//me vuelve a obligaar a crear los getter...
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public String getNum() {
+		return num;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public double getHeight() {
+		return height;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public double getEgg() {
+		return egg;
+	}
+
+	public String getCandy() {
+		return candy;
+	}
+
+	public List<String> getType() {
+		return type;
+	}
+
+	public List<String> getWeaknesses() {
+		return weaknesses;
+	}
+
+	public double getAvgSpawns() {
+		return avgSpawns;
+	}
+
+	public List<Double> getMultipliers() {
+		return multipliers;
+	}
+
+	public String getSpawnTime() {
+		return spawnTime;
+	}
+
+	public double getSpawnChance() {
+		return spawnChance;
+	}
+
+	public List<EvolutionItem> getPrevEvolution() {
+		return prevEvolution;
+	}
+
+	public int getCandyCount() {
+		return candyCount;
+	}
+
+	public List<EvolutionItem> getNextEvolution() {
+		return nextEvolution;
+	}
 }

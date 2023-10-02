@@ -1,5 +1,6 @@
 package org.pokemon;
 
+import org.pokemon.controllers.ProcesadorCsv;
 import org.pokemon.controllers.ProcesadorJson;
 import org.pokemon.models.EvolutionItem;
 import org.pokemon.models.Pokemon;
@@ -10,7 +11,7 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
 
-        ProcesadorJson pj=new ProcesadorJson();
+        ProcesadorJson pj=ProcesadorJson.getInstancia();
         List<Pokemon> res=new ArrayList<>();
 
         System.out.println("Consulta: Obtener el nombre los 10 primeros pokemons");
@@ -59,7 +60,7 @@ public class Main {
         System.out.println("Consulta:Pokemon con una evolución que no es de tipo fire.");
         pj.getPokedex().obtenerStream().filter(p->!p.getType().contains("Fire")&&p.getPrevEvolution()!=null&&p.getPrevEvolution().size()==1)
                 .forEach(pok->{
-                    EvolutionItem ev=EvolutionItem.builder().name(pok.getName()).num(pok.getNum()).build();
+                    EvolutionItem ev=new EvolutionItem(pok.getName(),pok.getNum());
                     pj.forEach(p->p.getNextEvolution()!=null&&p.getNextEvolution().contains(ev)).stream().map(Pokemon::getName).forEach(System.out::println);
                 });
 
@@ -123,5 +124,9 @@ public class Main {
             }
         }
         System.out.println("Debilidad mas comun: "+debilMasComun);
+        System.out.println("------------------------------------------------------------------");
+        System.out.println("Exportando a un CSV");
+        ProcesadorCsv pc=ProcesadorCsv.getInstancia();
     }
+
 }

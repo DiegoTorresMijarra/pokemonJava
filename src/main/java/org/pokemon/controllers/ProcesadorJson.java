@@ -40,7 +40,7 @@ public class ProcesadorJson {
 
     private void cargarPokedex() {
         String archivoJson=dataPath+File.separator+jsonFile;
-        Gson gson =new GsonBuilder().setPrettyPrinting().create();
+        Gson gson =new Gson();
 
         try (FileReader reader = new FileReader(archivoJson)) {
             Type streamPoke=new TypeToken<List<JsonObject>>(){}.getType();

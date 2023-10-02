@@ -22,6 +22,14 @@ public class EvolutionItem{
         this.name=name;
     }
 
+    public String getNum() {
+        return num;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "{name='" + name + '\'' +
