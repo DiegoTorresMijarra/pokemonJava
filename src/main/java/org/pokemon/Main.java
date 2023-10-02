@@ -59,7 +59,7 @@ public class Main {
         System.out.println("Consulta:Pokemon con una evolución que no es de tipo fire.");
         pj.getPokedex().obtenerStream().filter(p->!p.getType().contains("Fire")&&p.getPrevEvolution()!=null&&p.getPrevEvolution().size()==1)
                 .forEach(pok->{
-                    EvolutionItem ev=new EvolutionItem(pok.getName(), pok.getNum());
+                    EvolutionItem ev=EvolutionItem.builder().name(pok.getName()).num(pok.getNum()).build();
                     pj.forEach(p->p.getNextEvolution()!=null&&p.getNextEvolution().contains(ev)).stream().map(Pokemon::getName).forEach(System.out::println);
                 });
 

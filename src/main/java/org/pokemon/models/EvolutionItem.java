@@ -16,19 +16,12 @@ public class EvolutionItem{
         this.num = obj.get("num").toString().replace((char)34,(char)32).trim();
         this.name =obj.get("name").toString().replace((char)34,(char)32).trim();
     }
-//me obliga a crearlos, por q no funciona el lombock
+//me obliga a crearlos, porq no funciona el lombock
     public EvolutionItem(String name,String num){
         this.num=num;
         this.name=name;
     }
 
-    public String getNum() {
-        return num;
-    }
-
-    public String getName() {
-        return name;
-    }
     @Override
     public String toString() {
         return "{name='" + name + '\'' +
