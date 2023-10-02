@@ -17,6 +17,8 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation("org.xerial:sqlite-jdbc:3.41.2.2")
+    implementation("org.mybatis:mybatis:3.5.13")
 
 }
 

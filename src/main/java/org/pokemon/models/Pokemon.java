@@ -49,6 +49,10 @@ public class Pokemon {
 		nextEvolution=procesarEvol(jo.get("next_evolution"));
 		prevEvolution=procesarEvol(jo.get("prev_evolution"));
 	}
+
+    public Pokemon() {
+    }
+
 	private int procesarCandyCount(JsonElement jo){
 		if(jo==null)
 			return -1;
@@ -221,5 +225,25 @@ public class Pokemon {
 
 	public List<EvolutionItem> getNextEvolution() {
 		return nextEvolution;
+	}
+
+	public void setNum(String num) {
+		this.num = num;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
 	}
 }

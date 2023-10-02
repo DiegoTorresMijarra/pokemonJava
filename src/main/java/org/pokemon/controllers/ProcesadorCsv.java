@@ -60,4 +60,8 @@ public class ProcesadorCsv {
         }
         System.out.println("-----------------------");
     }
+
+    public Pokedex getPokedex() {
+        return pokedex;
+    }
 }
